@@ -1,0 +1,323 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+    padding-left: 80px; /* mueve todo un poquito a la derecha */
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #b30000;
+}
+
+h1 {
+    background-color: #b30000;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-top: 40px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+li {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #b30000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1em;
+    color: #888;
+}
+
+/* Flex para Taeguks y Palgwes */
+.poomsaes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.taeguks, .palgwes {
+    flex: 1 1 48%;
+}
+
+.poomsae-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.poomsae-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #b30000;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .taeguks, .palgwes {
+        flex: 1 1 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .section {
+        padding: 15px;
+    }
+}
+
+/* Botón para volver arriba */
+#scrollBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+}
+#scrollBtn:hover {
+    background-color: #800000;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.dark-mode .section {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+body.dark-mode a {
+    color: #ff6b6b;
+}
+
+#darkModeToggleBox {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 99;
+    background-color: #b30000;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#darkModeToggleBox:hover {
+    background-color: #800000;
+}
+
+#darkModeToggle {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+/* Botones de colapsar */
+.toggle {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.toggle:hover {
+    background-color: #800000;
+}
+.section-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Boton/enlace del reglamento*/
+.reglamento-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #b30000;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.reglamento-link:hover {
+    background-color: #800000;
+}
+
+/* Menu lateral*/
+#sideMenu {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+#sideMenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sideMenu li {
+    margin: 10px 0;
+}
+
+#sideMenu a {
+    text-decoration: none;
+    color: #b30000;
+    font-weight: bold;
+}
+
+#sideMenu a:hover {
+    text-decoration: underline;
+}
+
+/* Botón hamburguesa oculto por defecto */
+#hamburgerBtn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 22px;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* Estilos responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    #sideMenu {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 10px;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 999;
+    }
+
+    #sideMenu.active {
+        display: block;
+    }
+
+    #hamburgerBtn {
+        display: block;
+    }
+
+    body {
+        padding-left: 0; /* Quita margen izquierdo cuando no hay menú fijo */
+    }
+}
+
+/*Redes y paypal*/
+footer .redes {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer .redes li {
+    margin: 5px 0;
+}
+
+footer .redes a {
+    color: #b30000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .redes a:hover {
+    text-decoration: underline;
+}
+
+.paypal-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0070ba;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.paypal-button:hover {
+    background-color: #003087;
+}
